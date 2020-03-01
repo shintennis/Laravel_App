@@ -25,17 +25,20 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('register') }}">登録</a>
                                 </li>
+                                
                             @endif
                         @else
+                            <a class="px-4 mr-5 btn btn-outline-success" href="{{ url('create') }}">投稿</a>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
+                                
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                        onclick="event.preventDefault();
+                                                        document.getElementById('logout-form').submit();">
                                         ログアウト
                                     </a>
 

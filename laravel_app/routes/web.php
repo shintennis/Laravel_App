@@ -17,6 +17,12 @@
 
 Route::get('/', 'PostsController@index');
 
+Route::get('/create', 'PostsController@create');
+
+Route::post('/store', 'PostsController@store');
+
+Route::get('/destroy/{post_id}', 'PostsController@destroy');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use App\Post;
+use Auth;
 use Illuminate\Http\Request;
 
 class PostsController extends Controller
@@ -14,4 +15,33 @@ class PostsController extends Controller
 
         return view('post.index', ['posts' => $posts]);
     }
+
+    public function create()
+    {
+        return view('post.create');
+    }
+
+
+    public function store(Request $request)
+    {
+        $post = new Post;
+
+        $post->user_id = Auth::user()->id;
+        $post->comment = $request->comment;
+
+        $post->save();
+        
+        $request->photo->storeAs('public/post_images', $post->id. '.jpg');
+
+        return redirect('/');
+    }
+
+    public function destroy($post_id)
+    {
+        $post = Post::find($post_id);
+        $post->delete();
+
+        return redirect('/');
+    }
+    
 }
