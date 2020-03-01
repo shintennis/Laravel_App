@@ -23,6 +23,10 @@ Route::post('/store', 'PostsController@store');
 
 Route::get('/destroy/{post_id}', 'PostsController@destroy');
 
+Route::get('/{like_id}/likes', 'LikesController@store');
+
+Route::get('/likes/{like_id}', 'LikesController@destroy');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
