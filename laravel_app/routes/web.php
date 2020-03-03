@@ -23,9 +23,13 @@ Route::post('/store', 'PostsController@store');
 
 Route::get('/destroy/{post_id}', 'PostsController@destroy');
 
-Route::get('/{like_id}/likes', 'LikesController@store');
+Route::get('posts/{like_id}/likes', 'LikesController@store');
 
 Route::get('/likes/{like_id}', 'LikesController@destroy');
+
+Route::post('/posts/{comment_id}/comments', 'CommentsController@store');
+
+Route::get('/comments/{comment_id}', 'CommentsController@destroy');
 
 Auth::routes();
 

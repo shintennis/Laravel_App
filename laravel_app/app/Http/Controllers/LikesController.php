@@ -9,6 +9,13 @@ use Auth;
 
 class LikesController extends Controller
 {
+
+    public function __construct()
+    {
+        // ログインしていなかったらログインページに遷移する（この処理を消すとログインしなくてもページを表示する）
+        $this->middleware('auth');
+    }
+
     public function store(Request $request)
     {
         $like = new Like;
