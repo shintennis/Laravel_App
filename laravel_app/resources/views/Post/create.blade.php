@@ -15,7 +15,7 @@
                     <div class="col-auto m-auto w-50">
                         <input class="form-control border-0" name="photo" type="file" accept="image/jpeg,image/gif,image/png" placeholder="画像を選択してください"/>
                         <br>
-                        <input class="form-control border-1" name="comment" type="text" placeholder="コメントを書く"/>
+                        <input class="form-control border-1" name="caption" type="text" placeholder="コメントを書く"/>
                         <br>
                         <input class="form-submit btn btn-outline-dark" type="submit" value="投稿する"/>
                     </div>

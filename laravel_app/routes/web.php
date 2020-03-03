@@ -23,7 +23,7 @@ Route::post('/store', 'PostsController@store');
 
 Route::get('/destroy/{post_id}', 'PostsController@destroy');
 
-Route::get('posts/{like_id}/likes', 'LikesController@store');
+Route::get('posts/{post_id}/likes', 'LikesController@store');
 
 Route::get('/likes/{like_id}', 'LikesController@destroy');
 

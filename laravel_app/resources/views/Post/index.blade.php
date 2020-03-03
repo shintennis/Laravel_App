@@ -22,12 +22,12 @@
                         <div class="row parts">
                             <div id="like-icon-post-{{ $post->id }}">
                             @if ($post->likedBy(Auth::user())->count() > 0)
-                                <a class="loved hide-text" data-remote="true" rel="nofollow" data-method="DELETE" href="/likes/{{ $post->likedBy(Auth::user())->firstOrFail()->id }}">いいねを取り消す</a>
+                                <a class="loved hide-text" data-remote="true" rel="nofollow" data-method="DELETE" href="/likes/{{ $post->likedBy(Auth::user())->firstOrFail()->id }}"><i class="fas fa-heart ml-3" style="font-size: 24px; color: red;"></i></a>
                             @else
-                                <a class="love hide-text" data-remote="true" rel="nofollow" data-method="POST" href="/posts/{{ $post->id }}/likes">いいね</a>
+                                <a class="love hide-text" data-remote="true" rel="nofollow" data-method="POST" href="/posts/{{ $post->id }}/likes"><i class="far fa-heart ml-3" style="font-size: 24px; color: red;"></i></a>
                             @endif
                             </div>
-                            <a class="comment" href="#"></a>
+                            <!-- <a class="comment" href="#"></a> -->
                         </div>
                         <div id="like-text-post-{{ $post->id }}">
                             @include('post.like_text')
@@ -39,11 +39,11 @@
                             <div id="comment-post-{{ $post->id }}">
                                 @include('post.comment_list')
                             </div>
-                            <a class="light-color no-text-decoration" href="/posts/{{ $post->id }}">{{ $post->created_at }}</a>
+                            <p>{{ $post->created_at }}</p>
                             <hr>
                             <div class="row actions" id="comment-form-post-{{ $post->id }}">
                                 <form class="w-100" id="new_comment" action="/posts/{{ $post->id }}/comments" accept-charset="UTF-8" data-remote="true" method="POST">
-                                    <input name="utf8"  type="hidden" value="✔︎">
+                                    <input name="utf8"  type="hidden">
                                     {{ csrf_field() }}
                                     <input value="{{ Auth::user()->id }}" type="hidden" name="user_id">
                                     <input value="{{ $post->id }}" type="hidden" name="post_id">
