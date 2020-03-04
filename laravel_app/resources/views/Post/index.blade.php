@@ -8,7 +8,7 @@
             @foreach($posts as $post)
             <div class="card mb-3">
                 <div class="card-header" style="font-size: 20px;">
-                    <a href="#">
+                    <a href="/user/{{ $post->user->id }}">
                         {{ Auth::user()->name }}
                     </a>
                         <span class="ml-30">
