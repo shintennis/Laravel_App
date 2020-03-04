@@ -9,7 +9,7 @@
             <div class="card mb-3">
                 <div class="card-header" style="font-size: 20px;">
                     <a href="/user/{{ $post->user->id }}">
-                        {{ Auth::user()->name }}
+                        {{ $post->user->name }}
                     </a>
                         <span class="ml-30">
                         <a class="text-decoration-none" style="font-size: 20px; color: gray; float: right;" href="/destroy/{{ $post->id }}"><i class="fas fa-trash-alt"></i></a>
