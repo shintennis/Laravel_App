@@ -9,6 +9,11 @@ use Auth;
 
 class UsersController extends Controller
 {
+    public function _construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function show($user_id)
     {
         $user = User::where('id', $user_id)->firstOrFail();
@@ -27,6 +32,10 @@ class UsersController extends Controller
     {
         $user = User::find($request->id);
         $user->name = $request->name;
+        $user->password = bcrypt($request->user_password);
 
+        $user->save();
+
+        redirect('/');
     }
 }

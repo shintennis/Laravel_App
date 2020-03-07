@@ -9,6 +9,11 @@ use Illuminate\Http\Request;
 
 class PostsController extends Controller
 {
+    public function _counstruct()
+    {
+        $this->middleware('auth');
+    } 
+
     public function index()
     {
         $posts = Post::limit(10)->orderBy('created_at', 'desc')->get();

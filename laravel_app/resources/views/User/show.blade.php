@@ -11,7 +11,7 @@
                 <h1>{{ $user->name }}</h1>
                 @if(Auth::user()->id == $user->id)
                 <div class="col-md-12 p-0">
-                    <a class="btn btn-outline-dark" href="/users/edit">プロフィール編集</a>
+                    <a class="btn btn-outline-dark" href="/user/edit">プロフィール編集</a>
                     <a class="btn btn-outline-dark" href="{{ route('logout') }}" onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();">ログアウト</a>
                     <form action="{{ route('logout') }}" method="POST" style="display: none;">{{ csrf_field() }}</form>

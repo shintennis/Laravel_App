@@ -18,15 +18,15 @@
 //投稿一覧
 Route::get('/', 'PostsController@index');
 
+
+
+//プロフィール編集
+Route::get('/user/edit', 'UsersController@edit');
+
+//プロフィール編集
+Route::post('/update', 'UsersController@update');
+
 //プロフィール画面
-
-//プロフィール編集
-Route::get('/users/edit', 'UsersController@edit');
-
-//プロフィール編集
-Route::post('/users/update', 'UsersController@update');
-
-
 Route::get('/user/{user_id}', 'UsersController@show');
 
 //投稿画面

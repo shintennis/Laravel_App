@@ -8,7 +8,7 @@
             @foreach($posts as $post)
             <div class="card mb-3">
                 <div class="card-header" style="font-size: 20px;">
-                    <a href="/user/{{ $post->user->id }}">
+                    <a style="text-decoration: none; color: black;" href="/user/{{ $post->user->id }}">
                         {{ $post->user->name }}
                     </a>
                         <span class="ml-30">
@@ -27,7 +27,6 @@
                                 <a class="love hide-text" data-remote="true" rel="nofollow" data-method="POST" href="/posts/{{ $post->id }}/likes"><i class="far fa-heart ml-3" style="font-size: 24px; color: red;"></i></a>
                             @endif
                             </div>
-                            <!-- <a class="comment" href="#"></a> -->
                         </div>
                         <div id="like-text-post-{{ $post->id }}">
                             @include('post.like_text')
