@@ -24,7 +24,7 @@ Route::get('/', 'PostsController@index');
 Route::get('/user/edit', 'UsersController@edit');
 
 //プロフィール編集
-Route::post('/update', 'UsersController@update');
+Route::post('user/update', 'UsersController@update');
 
 //プロフィール画面
 Route::get('/user/{user_id}', 'UsersController@show');

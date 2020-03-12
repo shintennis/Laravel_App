@@ -31,11 +31,11 @@ class UsersController extends Controller
     public function update(Request $request)
     {
         $user = User::find($request->id);
-        $user->name = $request->name;
+        $user->name = $request->user_name;
         $user->password = bcrypt($request->user_password);
 
         $user->save();
 
-        redirect('/');
+        return redirect('/user/'.$request->id);
     }
 }
